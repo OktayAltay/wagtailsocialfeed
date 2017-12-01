@@ -53,7 +53,7 @@ class InstagramFeedItem(FeedItem):
 
 class InstagramFeedQuery(AbstractFeedQuery):
     def _get_load_kwargs(self, oldest_post):
-        # Trick from twitter API doc to exclude the oldest post fromy
+        # Trick from twitter API doc to exclude the oldest post from
         # the next result-set
         return {'max_id': self.oldest_post['id']}
 
