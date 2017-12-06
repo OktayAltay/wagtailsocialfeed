@@ -188,7 +188,7 @@ class InstagramFeedTest(TestCase):
 
     @feed_response('instagram', modifier=_remove_items)
     def test_feed_unexpected_response(self, feed):
-        with self.assertRaises(KeyError):
+        with self.assertRaises(FeedError):
             self.stream.get_items(config=self.feedconfig)
 
 
