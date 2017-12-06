@@ -171,7 +171,6 @@ class AbstractFeed(object):
         """
         cls_name = self.__class__.__name__
         cache_key = 'socialfeed:{}:data:{}'.format(cls_name, config.id)
-
         if query_string:
             cache_key += ":q-{}".format(query_string)
 
@@ -211,7 +210,7 @@ class AbstractFeed(object):
         Fetch the data from the online source.
 
         By default it will query just one result-page from the online source.
-        When a `query_string` is given, multiple pages can be retreived in order
+        When a `query_string` is given, multiple pages can be retrieved in order
         to increase the changes of returning a usefull result-set.
         The size of the history to be searched through is specified in `SEARCH_MAX_HISTORY`
         (see `_more_history_allowed` for the specific implementation).
@@ -242,7 +241,6 @@ class AbstractFeed(object):
                     break
                 oldest_post = _oldest_post
                 raw += _raw
-
         return raw
 
     def _convert_raw_item(self, raw):
