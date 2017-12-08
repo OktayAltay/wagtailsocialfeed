@@ -127,7 +127,7 @@ class AbstractFeedQuery(object):
 
         We return the oldest post as well because the raw data might be
         filtered based on the query_string, but we still need the oldest
-        post to check the date to determine wether we should stop our
+        post to check the date to determine weather we should stop our
         search or continue
 
         It will call the protected `_load()` method, perform
@@ -166,7 +166,7 @@ class AbstractFeed(object):
         :param config: `SocialFeedConfiguration` to use
         :param limit: limit the output. Use 0 or None for no limit (default=0)
         :param query_string: the search term to filter on (default=None)
-        :param use_cache: utilize the cache store/retreive the results
+        :param use_cache: utilize the cache store/retrieve the results
             (default=True)
         """
         cls_name = self.__class__.__name__
@@ -211,7 +211,7 @@ class AbstractFeed(object):
 
         By default it will query just one result-page from the online source.
         When a `query_string` is given, multiple pages can be retrieved in order
-        to increase the changes of returning a usefull result-set.
+        to increase the changes of returning a useful result-set.
         The size of the history to be searched through is specified in `SEARCH_MAX_HISTORY`
         (see `_more_history_allowed` for the specific implementation).
 

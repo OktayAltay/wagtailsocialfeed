@@ -59,13 +59,12 @@ class InstagramFeedQuery(AbstractFeedQuery):
 
     def _search(self, raw_item):
         """Very basic search function"""
-        return self.query_string.lower() in raw_item['caption'].lower()
+        return self.query_string.lower() in raw_item
 
     def _load(self, max_id=None):
         url = "https://www.instagram.com/{}/?__a=1".format(self.username)
         if max_id:
             url += "?max_id={}".format(max_id)
-
         resp = requests.get(url)
         if resp.status_code == 200:
             try:
